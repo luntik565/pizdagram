@@ -6,6 +6,7 @@ export const users = pgTable('users', {
   id: serial('id').primaryKey(),
   username: varchar('username', { length: 100 }).unique().notNull(),
   password: varchar('password', { length: 255 }).notNull(),
+  //avatar: text('avatar')
 });
 
 export const rooms = pgTable('rooms', {
@@ -30,7 +31,8 @@ export const roomMembers = pgTable('room_members', {
 
 export const messages = pgTable('messages', {
   id: serial('id').primaryKey(),
-  massage: text('massage').notNull(), // сохранена ваша опечатка из Prisma схемы
+  massage: text('massage'),
+  mediaURL: text('mediaURL'),
   createdAt: timestamp('created_at').defaultNow().notNull(),
   userId: integer('user_id')
     .notNull()

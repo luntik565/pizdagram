@@ -15,6 +15,27 @@
       "when": 1785607154039,
       "tag": "0001_friendly_boomer",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1785839585619,
+      "tag": "0002_loving_toro",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1785951076000,
+      "tag": "0003_cute_raider",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1785951325087,
+      "tag": "0004_tricky_the_hunter",
+      "breakpoints": true
     }
   ]
 }

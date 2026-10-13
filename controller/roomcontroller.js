@@ -24,7 +24,7 @@ class RoomController{
                     roomName: rooms.name,
                     isGroup: rooms.isGroup,
                     memberId: users.id,
-                    memberUsername: users.username
+                    memberUsername: users.username,
                 }).from(rooms)
                 .innerJoin(roomMembers, eq(rooms.id, roomMembers.roomId))
                 .innerJoin(users, eq(roomMembers.userId, users.id))
@@ -43,7 +43,8 @@ class RoomController{
                 }
                 roomsMap[r.roomId].members.push({
                     id: r.memberId,
-                    username: r.memberUsername
+                    username: r.memberUsername,
+                    //avatar: r.avatar
                 })
             })
 

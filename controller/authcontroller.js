@@ -78,9 +78,8 @@ class AuthControll {
             const allusers = await db.query.users.findMany()
             return res.json(allusers)
         } catch (error) {
-            
-        }
-        
+            return res.status(500).json({ message: "Ошибка сервера" })
+        }   
     }
 }
 

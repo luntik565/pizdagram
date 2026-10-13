@@ -63,13 +63,13 @@ export default function initChat(io) {
         });
 
         // 2. Быстрая отправка сообщения
-        socket.on('messageSend', async ({ txt, uId, rId }) => {
+        socket.on('messageSend', async ({ txt, uId, rId, mURL }) => {
             try {
-                // Комната уже 100% создана на этапе join, поэтому просто сохраняем сообщение в базу
                 const [newMessage] = await db.insert(messages).values({
                     userId: Number(uId),
                     roomId: rId,
-                    massage: txt
+                    massage: txt || null,
+                    mediaURL: mURL || null
                 }).returning();
 
                 // Отправляем сообщение всем подключенным к сокет-комнате
